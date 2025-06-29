@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font: "Be Vietnam Pro", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font: "Be Vietnam Pro", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    font-family: var(--font);
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin .inner-wrap {
+    display: flex;
+}
+
+.admin .inner-wrap .admin-left {
+    padding: 20px;
+    background-color: #263544;
+    margin-right: 20px;
+    width: calc(30%-20px);
+}
+
+.admin .inner-wrap .admin-left .title {
+    text-align: center;
+    color: white;
+    margin: 0;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+}
+
+.admin .inner-wrap .admin-left .infor {
+    /* color: #B7C0CD; */
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.admin .inner-wrap .admin-left .category i {
+    color: #B7C0CD;
+    margin-right: 5px;
+    padding-left: 10px;
+}
+
+.admin .inner-wrap .admin-left .category a {
+    color: #B7C0CD;
+}
+
+.admin .inner-wrap .admin-left .category a:hover {
+    color: white;
+}
+
+.admin .inner-wrap .admin-left .last {
+    margin-bottom: 700px;
+}
+
+.admin .inner-wrap .admin-right {
+    width: calc(100%);
+}
+
+.admin .inner-wrap .admin-right table {
+    caption-side: bottom;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.admin .inner-wrap .admin-right table td, table thead {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 120px;
+    text-align: center;
+}
+
+.admin .inner-wrap .admin-right table td input {
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    height: 24px;
+    font-size: 16px;
+}
+
+.admin .inner-wrap .admin-right table td select {
+    width: 100%;
+    text-align: center;
+    height: 24px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.admin .inner-wrap .admin-right table .update,  table .delete{
+    font-style: italic;
+    text-decoration: underline;
+    cursor: pointer;
+    
+}
+
+.admin .inner-wrap .admin-right table thead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: black;
+    color: white;
+}
+
+.admin .inner-wrap .admin-right .main-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.admin .inner-wrap .admin-right .main-title h1 {
+    margin: 0;
+}
+
+
+.admin .inner-wrap .admin-right .main-title form {
+    display: flex;
+    align-items: center;
+}
+
+.admin .inner-wrap .admin-right .main-title form label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.admin .inner-wrap .admin-right .main-title form .text {
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.admin .inner-wrap .admin-right .main-title form .button {
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    margin-left: 5px;
+}
+
