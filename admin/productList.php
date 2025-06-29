@@ -7,6 +7,7 @@ if ($_SESSION['login']['role'] == "User" ){
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@ if ($_SESSION['login']['role'] == "User" ){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Admin home</title>
 </head>
+
 <body>
     <div class="admin">
         <div class="inner-wrap">
@@ -81,13 +83,14 @@ if ($_SESSION['login']['role'] == "User" ){
                                     INNER JOIN Category ON product.category_id = category.category_id;";
                             $result = mysqli_query($conn, $sql);
                             while($row = mysqli_fetch_assoc($result)){?>
-                            <tr>
-                                <td>
-                                    <?php echo $row['Product_id']; ?>
-                                </td>
-                                <td>
-                                    <select name="category_id" id="category_id_<?php echo $row['Product_id']; ?>" onchange="handleCategoryChange(<?php echo $row['Product_id']; ?>, this.value)">
-                                        <?php 
+                        <tr>
+                            <td>
+                                <?php echo $row['Product_id']; ?>
+                            </td>
+                            <td>
+                                <select name="category_id" id="category_id_<?php echo $row['Product_id']; ?>"
+                                    onchange="handleCategoryChange(<?php echo $row['Product_id']; ?>, this.value)">
+                                    <?php 
                                         $sql = "SELECT * FROM category";
                                         $result1 = mysqli_query($conn, $sql);
                                             while ($row1 = mysqli_fetch_assoc($result1)) {
@@ -99,38 +102,51 @@ if ($_SESSION['login']['role'] == "User" ){
                                                 }
                                             }
                                             ?>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input id="product_name_<?php echo $row['Product_id']; ?>" type="text" value="<?php echo $row['Product_Name']; ?>" class="Name" style="width: 100%" oninput="update_product_name(<?php echo $row['Product_id']; ?>)">
-                                </td>
-                                <td>
-                                    <input id="stock_<?php echo $row['Product_id']; ?>" type="text" value="<?php echo $row['stock']; ?>" oninput="update_stock(<?php echo $row['Product_id']; ?>)"> 
-                                </td>
-                                <td>
-                                    <input id="price_<?php echo $row['Product_id']; ?>" type="text" value="<?php echo $row['Price']; ?>" oninput="update_price(<?php echo $row['Product_id']; ?>)">
-                                </td>
-                                <td>
-                                    <img src="<?php echo "../".$row['img_path']; ?>" alt="" style="width: 84px; height: 84px; aspect-ratio: 1 / 1; object-fit: cover;">
-                                </td>
-                                <td >
-                                    <form action="update.php" method="POST">
-                                        <input type="hidden" name="Product_id" value="<?php echo $row['Product_id']; ?>">
-                                        <input name="category_id" id="category_name_update_<?php echo $row['Product_id']; ?>" type="hidden" value="<?php echo $row['category_id']; ?>">
-                                        <input name="Product_Name" id="product_name_update_<?php echo $row['Product_id']; ?>" type="hidden" value="<?php echo $row['Product_Name']; ?>">
-                                        <input name="stock" id="stock_update_<?php echo $row['Product_id']; ?>" type="hidden" value="<?php echo $row['stock']; ?>">
-                                        <input name="Price" id="price_update_<?php echo $row['Product_id']; ?>" type="hidden" value="<?php echo $row['Price']; ?>">
-                                        <input id="update" class="update" type="submit" value="Update">
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="delete.php" method="POST">
-                                        <input type="hidden" name="product_id" value="<?php echo $row['Product_id']; ?>">
-                                        <input type="hidden" name="img_path" value="<?php echo $row['img_path']; ?>">
-                                        <input id="delete" class="delete" type="submit" value="Delete">
-                                    </form>
-                                </td>
-                            </tr>
+                                </select>
+                            </td>
+                            <td>
+                                <input id="product_name_<?php echo $row['Product_id']; ?>" type="text"
+                                    value="<?php echo $row['Product_Name']; ?>" class="Name" style="width: 100%"
+                                    oninput="update_product_name(<?php echo $row['Product_id']; ?>)">
+                            </td>
+                            <td>
+                                <input id="stock_<?php echo $row['Product_id']; ?>" type="text"
+                                    value="<?php echo $row['stock']; ?>"
+                                    oninput="update_stock(<?php echo $row['Product_id']; ?>)">
+                            </td>
+                            <td>
+                                <input id="price_<?php echo $row['Product_id']; ?>" type="text"
+                                    value="<?php echo $row['Price']; ?>"
+                                    oninput="update_price(<?php echo $row['Product_id']; ?>)">
+                            </td>
+                            <td>
+                                <img src="<?php echo "../".$row['img_path']; ?>" alt=""
+                                    style="width: 84px; height: 84px; aspect-ratio: 1 / 1; object-fit: cover;">
+                            </td>
+                            <td>
+                                <form action="update.php" method="POST">
+                                    <input type="hidden" name="Product_id" value="<?php echo $row['Product_id']; ?>">
+                                    <input name="category_id"
+                                        id="category_name_update_<?php echo $row['Product_id']; ?>" type="hidden"
+                                        value="<?php echo $row['category_id']; ?>">
+                                    <input name="Product_Name"
+                                        id="product_name_update_<?php echo $row['Product_id']; ?>" type="hidden"
+                                        value="<?php echo $row['Product_Name']; ?>">
+                                    <input name="stock" id="stock_update_<?php echo $row['Product_id']; ?>"
+                                        type="hidden" value="<?php echo $row['stock']; ?>">
+                                    <input name="Price" id="price_update_<?php echo $row['Product_id']; ?>"
+                                        type="hidden" value="<?php echo $row['Price']; ?>">
+                                    <input id="update" class="update" type="submit" value="Update">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="delete.php" method="POST">
+                                    <input type="hidden" name="product_id" value="<?php echo $row['Product_id']; ?>">
+                                    <input type="hidden" name="img_path" value="<?php echo $row['img_path']; ?>">
+                                    <input id="delete" class="delete" type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
                         <?php } ?>
                     </tbody>
 
@@ -139,31 +155,34 @@ if ($_SESSION['login']['role'] == "User" ){
         </div>
     </div>
 </body>
+
 </html>
 <script>
-    function handleCategoryChange(productId, value){
-        console.log(value);
-        console.log(productId);
-        const input = document.getElementById(`category_name_update_${productId}`);
-        input.value = value;
-    }
-    function update_product_name(productId) {
-        const input = document.getElementById(`product_name_${productId}`);
-        const hiddenInput = document.getElementById(`product_name_update_${productId}`);
-        hiddenInput.value = input.value;
- 
-}
-function update_stock(productId) {
-        const input = document.getElementById(`stock_${productId}`);
-        const hiddenInput = document.getElementById(`stock_update_${productId}`);
-        hiddenInput.value = input.value;
- 
-}
-function update_price(productId) {
-        const input = document.getElementById(`price_${productId}`);
-        const hiddenInput = document.getElementById(`price_update_${productId}`);
-        hiddenInput.value = input.value;
- 
+function handleCategoryChange(productId, value) {
+    console.log(value);
+    console.log(productId);
+    const input = document.getElementById(`category_name_update_${productId}`);
+    input.value = value;
 }
 
+function update_product_name(productId) {
+    const input = document.getElementById(`product_name_${productId}`);
+    const hiddenInput = document.getElementById(`product_name_update_${productId}`);
+    hiddenInput.value = input.value;
+
+}
+
+function update_stock(productId) {
+    const input = document.getElementById(`stock_${productId}`);
+    const hiddenInput = document.getElementById(`stock_update_${productId}`);
+    hiddenInput.value = input.value;
+
+}
+
+function update_price(productId) {
+    const input = document.getElementById(`price_${productId}`);
+    const hiddenInput = document.getElementById(`price_update_${productId}`);
+    hiddenInput.value = input.value;
+
+}
 </script>

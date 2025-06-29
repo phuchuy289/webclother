@@ -274,7 +274,7 @@ include "connect.php";
                 <div class="footer__top">
                     <div class="footer__main">
                         <div class="footer__title">
-                            28.Shop
+                            Gr6+
                         </div>
                         <div class="footer__desc">
                             Chúng tôi có những bộ quần áo phù hợp với phong cách của bạn và bạn có thể tự hào khi mặc.
